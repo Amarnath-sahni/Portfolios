@@ -11,7 +11,7 @@ const achievements = [
     id: 2,
     title: "🥈 2nd Place – TechFest Debugging Competition",
     description: "Showcased problem-solving skills by debugging complex code faster than others.",
-    link: "https://drive.google.com/drive/folders/1eryAsJIfv6lrzy4QydwIUyRW3aU_R_Ud", // No link provided, button won't be shown
+    link: "https://drive.google.com/file/d/1gOhAuWEVoRM2-s7HjgE8xV-2kFz4r4hD/view?usp=drive_link", // No link provided, button won't be shown
   },
   {
     id: 3,
