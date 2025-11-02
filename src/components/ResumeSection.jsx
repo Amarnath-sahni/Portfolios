@@ -1,42 +1,48 @@
 import { motion } from "framer-motion";
 
+const educationData = [
+  { qualification: "Xth", board: "BSEB", marks: 79 },
+  { qualification: "XIIth", board: "BSEB", marks: 71 },
+  { qualification: "Graduation(B.tech)", board: "IKG Punjab Technical University", marks: 84.17 },
+];
+
 const ResumeSection = () => {
   return (
-    <section className="py-16 bg-gray-100 text-center">
-      <h2 className="text-3xl font-semibold mb-6">Resume</h2>
-      
-      {/* Education Section */}
-      <div className="max-w-4xl mx-auto mb-12">
-        <h3 className="text-2xl font-medium mb-4">Education</h3>
-        <table className="w-full border-collapse border border-gray-300">
-          <thead>
-            <tr className="bg-gray-200">
-              <th className="border border-gray-300 p-2">Qualification</th>
-              <th className="border border-gray-300 p-2">University/Board</th>
-              <th className="border border-gray-300 p-2">Marks/CGPA</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border border-gray-300 p-2">10th</td>
-              <td className="border border-gray-300 p-2">BSEB</td>
-              <td className="border border-gray-300 p-2">79%</td>
-            </tr>
-            <tr>
-              <td className="border border-gray-300 p-2">12th</td>
-              <td className="border border-gray-300 p-2">BSEB</td>
-              <td className="border border-gray-300 p-2">71%</td>
-            </tr>
-            <tr>
-              <td className="border border-gray-300 p-2">Graduation</td>
-              <td className="border border-gray-300 p-2">IKG Punjab Technical University</td>
-              <td className="border border-gray-300 p-2">CGPA: 8.14/10</td>
-            </tr>
-          </tbody>
-        </table>
+    <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black text-white">
+      <div className="max-w-5xl mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-12 border-b-4 border-yellow-400 inline-block pb-2 uppercase tracking-wider">
+          My Academic Journey
+        </h2>
+
+        <div className="flex flex-col gap-12">
+          {educationData.map((edu, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.3 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl shadow-lg"
+            >
+              <h3 className="text-xl font-semibold text-green-400">{edu.qualification}</h3>
+              <p className="text-gray-300 mt-1">
+                <span className="font-medium">Board/University:</span> {edu.board}
+              </p>
+
+              {/* Percentage bar */}
+              <div className="mt-4 w-full h-6 bg-gray-700 rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${edu.marks}%` }}
+                  transition={{ duration: 1.2, delay: index * 0.3, ease: "easeOut" }}
+                  className="h-6 bg-gradient-to-r from-green-400 via-pink-500 to-blue-500 rounded-full"
+                />
+              </div>
+
+              <p className="mt-1 text-gray-300 font-medium">{edu.marks}%</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
-      
-  
     </section>
   );
 };

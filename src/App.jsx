@@ -1,30 +1,24 @@
-import './App.css'
-import './index.css';
-import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
-import ProjectsSection from './components/ProjectsSection'
-import SkillsSection from './components/SkillsSection'
-import PageTransition from './components/PageTransition';
-import ResumeSection from './components/ResumeSection';
-import AchievementsSection from './components/AchievementsSection';
-import Footer from './components/Footer';
+import React from 'react';
+import HeroSection from './components/HeroSection';
+import Exprience from './components/Exprience.jsx';
+import AchievementsSection from './components/AchievementsSection.jsx';
+import ProjectsSection from './components/ProjectsSection.jsx';
+import Footer from './components/Footer.jsx';
+import FeedbackSection from './components/FeedbackSection.jsx';
 
-
-
-function App() {
+const App = () => {
   return (
-    <PageTransition>
-      <Navbar />
-      <HeroSection />
-      <ProjectsSection />
-      <SkillsSection />
-      <AchievementsSection/>
-      <ResumeSection/>
-      <Footer/>
-    </PageTransition>
-   
+    <>
+      {/* This container is fixed at 12 inches width */}
+     
+          <HeroSection />
+          <Exprience />
+          <ProjectsSection />
+          <AchievementsSection />
+          <FeedbackSection />
+          <Footer />
+    </>
   );
-}
+};
 
-
-export default App
+export default App;
